@@ -1,0 +1,122 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.swcguild.trianglesoftware.ui;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author apprentice
+ */
+public class SystemIO {
+
+    Scanner kb = new Scanner(System.in);
+
+    public SystemIO() {
+
+    }
+
+    public int getInt(String prompt) {
+        boolean badInput;
+        int result = 0;
+        do {
+            try {
+                System.out.println(prompt);
+                result = Integer.parseInt(kb.nextLine());
+                badInput = false;
+            } catch (NumberFormatException nfe) {
+                System.out.println("Please enter a numeric value.");
+                badInput = true;
+            } 
+        
+        } while (badInput == true);
+        
+        return result;
+        
+        
+    }
+
+    public int getInt(String prompt, int min, int max) {
+        int num = 0;
+        do {
+            num = getInt(prompt); //this checks and makes sure that the number is numeric value not something else!
+        } while (num > max || num < min);
+        return num;
+
+    }
+
+    public String getString(String prompt) {
+        System.out.println(prompt);
+        String input = kb.nextLine();
+        return input;
+    }
+
+    public float getFloat(String prompt) {
+        float result = 0;
+        boolean badInput;
+        do {
+            try {
+                System.out.println(prompt);
+                result = Float.parseFloat(kb.nextLine());
+                badInput = false;
+            } catch (NumberFormatException nfe) {
+                System.out.println("Please enter a numeric value.");
+                badInput = true;
+            } 
+        
+        } while (badInput == true);
+        return result;
+    }
+
+    public float getFloat(String prompt, float min, float max) {
+        float num = 0;
+        do {
+            num = getFloat(prompt);
+        } while (num >= max || num <= min);
+        return num;
+    }
+
+    public double getDouble(String prompt) {
+        double result = 0;
+        boolean badInput;
+        do {
+            try {
+                System.out.println(prompt);
+                result = Double.parseDouble(kb.nextLine());
+                badInput = false;
+            } catch (NumberFormatException nfe) {
+                System.out.println("Please enter a numeric value.");
+                badInput = true;
+            } 
+        
+        } while (badInput == true);
+        return result;
+    }
+
+    public double getDouble(String prompt, double min, double max) {
+        double num = 0;
+        do {
+            num = getDouble(prompt);
+        } while (num >= max || num <= min);
+        return num;
+    }
+
+    public void printMessage(String prompt) {
+        System.out.println(prompt);
+    }
+    
+    public void printMessage(int prompt) {
+        System.out.println(prompt);
+    }
+    
+    public void printMessage(double prompt) {
+        System.out.println(prompt);
+    }
+    
+    public void printMessage(float prompt) {
+        System.out.println(prompt);
+    }
+}

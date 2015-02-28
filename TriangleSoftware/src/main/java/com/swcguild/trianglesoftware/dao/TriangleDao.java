@@ -6,6 +6,7 @@
 package com.swcguild.trianglesoftware.dao;
 
 import com.swcguild.trianglesoftware.dto.Triangle;
+import java.util.List;
 
 /**
  *
@@ -20,5 +21,7 @@ public interface TriangleDao {
     public void getTrianglesFromDatabase();
     
     public void loadTrianglesToDatabase();
+    
+    public List<Triangle> getAllTrianglesInDatabase();
 
 }

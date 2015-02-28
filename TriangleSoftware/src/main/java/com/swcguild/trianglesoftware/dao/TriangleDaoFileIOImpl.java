@@ -6,7 +6,10 @@
 package com.swcguild.trianglesoftware.dao;
 
 import com.swcguild.trianglesoftware.dto.Triangle;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -40,6 +43,14 @@ public class TriangleDaoFileIOImpl implements TriangleDao {
     public void loadTrianglesToDatabase() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public List<Triangle> getAllTrianglesInDatabase() {
+       Collection c = allTriangles.values();
+       return new ArrayList(c);
+    }
+    
+    
     
     
     
