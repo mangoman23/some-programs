@@ -48,17 +48,14 @@ public class TriangleDaoFileIOImplTest {
     
     @Test
     public void addGetGetAllTest() {
-        Triangle testTriangle = new Triangle();
-        testTriangle.setSideOne(3);
-        testTriangle.setSideTwo(4);
-        testTriangle.setSideThree(5);
+        Triangle testTriangle = new Triangle(3,4,5);
         testTriangle.setTriangleType("test triangle");
         
         dao.addTriangleToDatabase(testTriangle);
         assertEquals(dao.getAllTrianglesInDatabase().size(), 1);
         int triangleId = testTriangle.getTriangleId();
         
-        Triangle copiedTriangle = new Triangle();
+        Triangle copiedTriangle = new Triangle(1,2,3);
         copiedTriangle = dao.getTriangleFromDatabase(triangleId);
         assertEquals(copiedTriangle, testTriangle);
         dao.addTriangleToDatabase(copiedTriangle);

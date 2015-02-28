@@ -12,12 +12,26 @@ import java.util.Objects;
  * @author apprentice
  */
 public class Triangle {
-    
+
     private int sideOne;
     private int sideTwo;
     private int sideThree;
     private int triangleId;
     private String triangleType;
+
+    public Triangle(int sideOne, int sideTwo, int sideThree) {
+        this.sideOne = sideOne;
+        this.sideTwo = sideTwo;
+        this.sideThree = sideThree;
+    }
+    
+    
+
+    @Override
+    public String toString() {
+        return "side one length:" + sideOne + ", side two length: " + sideTwo + "\n"
+                + "side three length: " + sideThree + ", triangle type: " + triangleType;
+    }
 
     public int getSideOne() {
         return sideOne;
@@ -96,7 +110,5 @@ public class Triangle {
         }
         return true;
     }
-    
-    
-    
+
 }

@@ -5,12 +5,14 @@
  */
 package com.swcguild.trianglesoftware.businesslogic;
 
+import com.swcguild.trianglesoftware.dto.Triangle;
+
 /**
  *
  * @author apprentice
  */
 public interface TriangleCalculator {
     
-    public String determineTriangleType(int sideOne, int sideTwo, int sideThree);
+    public void determineTriangleType(Triangle triangle);
     
 }

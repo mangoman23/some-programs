@@ -47,6 +47,15 @@ public class SystemIO {
         return num;
 
     }
+    
+    public int getInt(String prompt, int min) {
+        int num = 0;
+        do {
+            num = getInt(prompt); //this checks and makes sure that the number is numeric value not something else!
+        } while (num < min);
+        return num;
+
+    }
 
     public String getString(String prompt) {
         System.out.println(prompt);
