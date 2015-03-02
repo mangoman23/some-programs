@@ -11,6 +11,8 @@ import com.swcguild.trianglesoftware.dao.TriangleDao;
 import com.swcguild.trianglesoftware.dao.TriangleDaoFileIOImpl;
 import com.swcguild.trianglesoftware.dto.Triangle;
 import com.swcguild.trianglesoftware.ui.SystemIO;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -23,11 +25,13 @@ public class TriangleController {
     TriangleDao dao = new TriangleDaoFileIOImpl();
     TriangleCalculator tcalc = new TriangleCalculatorFileIOImpl();
 
-    public void run() {
+    public void run() throws FileNotFoundException, IOException {
+        dao.getCounterFromDatabase();
+        dao.getTrianglesFromDatabase();
         menu();
     }
 
-    private void menu() {
+    private void menu() throws IOException {
         int userChoice;
         do {
             sio.printMessage("-----TRIANGLE SOFTWARE-----");
@@ -55,6 +59,8 @@ public class TriangleController {
             }
         } while (userChoice != 3);
         sio.printMessage("Have a great day!");
+        dao.loadTrianglesToDatabase();
+        dao.loadCounterToDatabase();
     }
 
     private void evaluateTriangle() {

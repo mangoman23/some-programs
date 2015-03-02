@@ -6,6 +6,7 @@
 package com.swcguild.trianglesoftware.app;
 
 import com.swcguild.trianglesoftware.controller.TriangleController;
+import java.io.IOException;
 
 /**
  *
@@ -13,7 +14,7 @@ import com.swcguild.trianglesoftware.controller.TriangleController;
  */
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         TriangleController tc = new TriangleController();
         tc.run();
     }

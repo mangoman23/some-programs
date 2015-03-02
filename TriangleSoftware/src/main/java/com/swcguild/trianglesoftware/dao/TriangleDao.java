@@ -6,6 +6,8 @@
 package com.swcguild.trianglesoftware.dao;
 
 import com.swcguild.trianglesoftware.dto.Triangle;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -18,10 +20,14 @@ public interface TriangleDao {
 
     public Triangle getTriangleFromDatabase(int triangleId);
     
-    public void getTrianglesFromDatabase();
+    public void getTrianglesFromDatabase() throws FileNotFoundException;
     
-    public void loadTrianglesToDatabase();
+    public void loadTrianglesToDatabase() throws IOException;
     
     public List<Triangle> getAllTrianglesInDatabase();
+    
+    public void getCounterFromDatabase() throws FileNotFoundException;
+    
+    public void loadCounterToDatabase() throws IOException;
 
 }
