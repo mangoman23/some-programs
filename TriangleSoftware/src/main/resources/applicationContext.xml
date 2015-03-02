@@ -16,8 +16,16 @@
   http://www.springframework.org/schema/aop/spring-aop-3.2.xsd"> 
 
     <!-- Bean definitions go here -->
-    <bean id = "triangleDao" ref = "com.swcguild.trianglesoftware.dao.TriangleDaoFileIOImpl"></bean>
-    <bean id = "triangleCalculator" ref = "com.swcguild.trianglesoftware.businesslogic.TriangleCalculatorFileIOImpl"></bean>
+    <bean id = "triangleDao" class = "com.swcguild.trianglesoftware.dao.TriangleDaoFileIOImpl"></bean>
+    <bean id = "triangleCalculator" class = "com.swcguild.trianglesoftware.businesslogic.TriangleCalculatorFileIOImpl"></bean>
+    <bean id= "systemIo" class = "com.swcguild.trianglesoftware.ui.SystemIO"></bean>
+
+    <bean id= "triangleController" class = "com.swcguild.trianglesoftware.controller.TriangleController">
+        <constructor-arg ref = "triangleDao"></constructor-arg>
+        <constructor-arg ref = "triangleCalculator"></constructor-arg>
+        <constructor-arg ref = "systemIo"></constructor-arg>
+    </bean>
+    
     
     
 </beans>

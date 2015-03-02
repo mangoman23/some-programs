@@ -52,19 +52,19 @@ public class TriangleCalculatorFileIOImplTest {
     @Test
     public void equilateralTest() {
         tcalc.determineTriangleType(triangleOne);
-        assertEquals(triangleOne.getTriangleType(), "Equilateral");
+        assertEquals(triangleOne.getTriangleType(), "equilateral");
     }
     
     @Test
     public void isoceleseTest() {
         tcalc.determineTriangleType(triangleThree);
-        assertEquals(triangleThree.getTriangleType(), "Isoceles");
+        assertEquals(triangleThree.getTriangleType(), "isoceles");
     }
     
     @Test
     public void scaleneTest() {
         tcalc.determineTriangleType(triangleTwo);
-        assertEquals(triangleTwo.getTriangleType(), "Scalene");
+        assertEquals(triangleTwo.getTriangleType(), "scalene");
     }
     
     @Test

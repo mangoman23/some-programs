@@ -7,6 +7,8 @@ package com.swcguild.trianglesoftware.app;
 
 import com.swcguild.trianglesoftware.controller.TriangleController;
 import java.io.IOException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
@@ -15,7 +17,8 @@ import java.io.IOException;
 public class App {
 
     public static void main(String[] args) throws IOException {
-        TriangleController tc = new TriangleController();
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+        TriangleController tc = ctx.getBean("triangleController", TriangleController.class);
         tc.run();
     }
 

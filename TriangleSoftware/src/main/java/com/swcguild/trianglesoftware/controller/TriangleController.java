@@ -21,9 +21,20 @@ import java.util.List;
  */
 public class TriangleController {
 
-    SystemIO sio = new SystemIO();
-    TriangleDao dao = new TriangleDaoFileIOImpl();
-    TriangleCalculator tcalc = new TriangleCalculatorFileIOImpl();
+    SystemIO sio;
+    TriangleDao dao;
+    TriangleCalculator tcalc;
+
+    public TriangleController(SystemIO sio, TriangleDao dao, TriangleCalculator tcalc) {
+        this.sio = sio;
+        this.dao = dao;
+        this.tcalc = tcalc;
+    }
+
+    
+
+    
+    
 
     public void run() throws FileNotFoundException, IOException {
         dao.getCounterFromDatabase();
