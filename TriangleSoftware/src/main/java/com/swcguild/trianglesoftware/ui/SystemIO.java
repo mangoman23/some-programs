@@ -37,6 +37,15 @@ public class SystemIO {
         
     }
 
+    public int getInt(String prompt, int min, int max) {
+        int num = 0;
+        do {
+            num = getInt(prompt); //this checks and makes sure that the number is numeric value not something else!
+        } while (num > max || num < min);
+        return num;
+
+    }
+    
     public int getInt(String prompt, int min) {
         int num = 0;
         do {
